@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <title>Floating Label</title>
+</head>
+
+
+
+<body>
+
+<div  class="wrapper" >
+
+    <!-- POP UP -->
+    <div class="hover__body" id="hover" onclick="popUpHide()"> </div>
+
+    <button class="btn__popup" onclick="popUp()" id="button"> Обратная связь </button>
+    <a href="" id="f" onclick="hello()"> </a>
+
+    <!-- /POP UP -->
+
+    <div id="popup" class="form">
+      <div class="header__popup"> <a href="#"onclick="popUpHide()">x</a></div>
+
+        <div class="container">
+            <form id="form" class="clients__form" action="#" method="post">
+
+              <h1 class="header"> Обратная связь </h1>
+
+
+    <div class="first__line">
+
+      <div class="input__data _error">
+          <input class="input__form _req _error" type="text" name="name" required>
+          <div class="underline"></div>
+          <label for="">Имя</label>
+          <div class="text__form__footer"> <p> Введите имя * </p> </div>
+      </div>
+
+      <div class="input__data _error">
+          <input class="input__form _req _phone _error" type="tel" name="phone" required>
+          <div class="underline"></div>
+          <label for="">Телефон</label>
+          <div class="text__form__footer"> <p> Введите телефон * </p> </div>
+      </div>
+
+    </div>
+
+    <div class="second__line">
+
+      <div class="input__data _error">
+          <input class="input__form _req _email _error" type="email" name="email" required>
+          <div class="underline"></div>
+          <label for="">Эл. почта</label>
+          <div class="text__form__footer"> <p> Проверте введеный email *</p> </div>
+      </div>
+
+    </div>
+
+    <div class="third__line">
+
+      <div class="input__data__message _error">
+          <input id="mes" class="input__form__message _req _error" type="text" name="text" required>
+          <div class="underline"></div>
+          <label for="mes">Сообщение</label>
+          <div class="text__form__footer"> <p> Введите сообщение * </p> </div>
+      </div>
+
+    </div>
+
+    <div class="text"> <p>Отправляя форму вы соглашаетесь с <span>пользовательским соглашением</span>
+            и <span>политикой конфиденциальности </span></p>
+    </div>
+
+    <div class="btn">
+        <button class="btn__form" type="submit"> Отправить </button>
+    </div>
+
+
+
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="assets/js/inputmask.min.js"></script>
+<script src="assets/js/scripts.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,531 @@
+body {
+  margin: 0;
+
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  line-height: 1.6;
+  color: #1c1c1c;
+}
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+.wrapper {
+  height: 100vh;
+  position: relative;
+  background-color: #e5e5e5;
+}
+
+/*POP UP*/
+.hover__body {
+  position: absolute;
+  background: #e5e5e5;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  opacity: 0;
+}
+
+.hover__body--active {
+  position: absolute;
+  background: #e5e5e5;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  opacity: 0.5;
+}
+
+.form {
+  position: absolute;
+  width: 600px;
+  height: 632px;
+  background: #a5a5a5;
+  border: solid 1px #000;
+
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+
+  top: 0%;
+  z-index: 6;
+  transition: 1s;
+  transform: translateY(-105%);
+}
+
+.form--active {
+  position: absolute;
+  width: 600px;
+  height: 632px;
+  background: #fff;
+  border: solid 1px #000;
+
+
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+
+  top: 11%;
+  z-index: 6;
+  transition: 1s;
+}
+
+.btn__popup {
+  position: absolute;
+  height: 50px;
+  width: 220px;
+
+  background: #f9c73b;
+  border-radius: 5px;
+  border: none;
+
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #1c1c1c;
+  cursor: pointer;
+
+  top: 25px;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+}
+
+.button--active {
+  position: absolute;
+  height: 50px;
+  width: 220px;
+
+  opacity: 0.5;
+
+  background: #f9c73b;
+  border-radius: 5px;
+  border: none;
+
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #1c1c1c;
+  cursor: pointer;
+
+  top: 25px;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+}
+
+.header__popup {
+  position: relative;
+  width: 100%;
+  text-align: right;
+}
+
+.header__popup a {
+  position: relative;
+  top: 15px;
+  right: 25px;
+  color: #000;
+  font-size: 14px;
+  font-weight: 900;
+  text-decoration: none;
+}
+/* /POP UP */
+
+.container {
+  padding-top: 40px;
+  margin: 0 auto;
+  width: 492px;
+}
+
+.clients__form {
+  position: relative;
+}
+
+.clients__form::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(227, 227, 227, 0.9) url("../img/wolf.gif") center / 80px
+    no-repeat;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s ease 0s;
+}
+
+.clients__form._sending::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+.header {
+  font-style: normal;
+  font-weight: 900;
+  font-size: 35px;
+  line-height: 41px;
+  letter-spacing: 0.02em;
+}
+
+.first__line {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+.second__line {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+
+  margin-top: 36px;
+}
+
+.third__line {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+
+  margin-top: 48px;
+}
+
+/* Floating Label */
+
+.input__data {
+  height: 50px;
+  width: 240px;
+  position: relative;
+  border: 1px solid #a5a5a5;
+  border-radius: 5px;
+
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.1;
+  color: #1c1c1c;
+}
+
+.input__data._error {
+  border: 1px solid #f36363;
+}
+
+.input__data input {
+  padding: 20px;
+  height: 100%;
+  width: 100%;
+}
+
+.input__data input:focus ~ label,
+.input__data input:valid ~ label {
+  transform: translateY(-36px);
+  font-size: 12px;
+  padding: 0 18px;
+  color: #A5A5A5;
+}
+
+.input__data label {
+  position: absolute;
+  padding: 0 20px;
+  bottom: 15px;
+  left: 0;
+  color: #A5A5A5;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.input__data._error label {
+    color: #f36363;
+}
+
+.input__data._error input:focus ~ label,
+.input__data._error input:valid ~ label {
+    color: #f36363;
+}
+
+.input__data .underline {
+  position: absolute;
+  bottom: 0px;
+  height: 2px;
+  width: 100%;
+}
+
+.input__data .underline:before {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  background: #000;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.input__data input:focus ~ .underline:before,
+.input__data input:valid ~ .underline:before {
+  transform: scaleX(1);
+}
+
+/* ----------------- */
+
+/* Floating Label Message */
+
+.input__data__message {
+  height: 150px;
+  width: 206%;
+  position: relative;
+  border: 1px solid #a5a5a5;
+  border-radius: 5px;
+
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.1;
+  color: #1c1c1c;
+}
+
+.input__data__message._error {
+  border: 1px solid #f36363;
+}
+
+.input__data__message input {
+  padding: 20px;
+  height: 100%;
+  width: 100%;
+}
+
+
+.input__data__message input:focus ~ label,
+.input__data__message input:valid ~ label {
+  transform: translateY(-36px);
+  font-size: 12px;
+  padding: 0 18px;
+  color: #A5A5A5;
+}
+
+.input__data__message label {
+  position: absolute;
+  padding: 0 20px;
+  bottom: 15px;
+  left: 0;
+  top: 20px;
+  color: #A5A5A5;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.input__data__message._error label {
+    color: #f36363;
+}
+
+.input__data__message._error input:focus ~ label,
+.input__data__message._error input:valid ~ label {
+    color: #f36363;
+}
+
+.input__data__message .underline {
+  position: absolute;
+  bottom: 0px;
+  height: 2px;
+  width: 100%;
+}
+
+.input__data__message .underline:before {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  background: #000;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.input__data__message input:focus ~ .underline:before,
+.input__data__message input:valid ~ .underline:before {
+  transform: scaleX(1);
+}
+
+/* ----------------- */
+
+
+.text {
+  width: 464px;
+  height: 29px;
+  font-size: 13px;
+  line-height: 15px;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+.text span {
+  text-decoration: underline;
+}
+
+.input__data._error .text__form__footer {
+  font-size: 12px;
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  top: 42px;
+  color: #f36363;
+  visibility: visible;
+}
+
+.input__data__message._error .text__form__footer{
+    font-size: 12px;
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  top: 142px;
+  color: #f36363;
+  visibility: visible;
+}
+
+.input__data .text__form__footer,
+.input__data__message .text__form__footer {
+    visibility: hidden;
+}
+
+.btn {
+  text-align: center;
+}
+
+.btn__form {
+  height: 50px;
+  width: 220px;
+
+  background: #f9c73b;
+  border-radius: 5px;
+  border: none;
+  margin-top: 31px;
+
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #1c1c1c;
+  cursor: pointer;
+  position: relative;
+  top: 0;
+}
+
+.btn__form:hover {
+  background: #ffbc00;
+}
+
+.btn__form:active {
+  top: 3px;
+}
+
+
+@media (max-width: 770px) {
+  .wrapper {
+    width: 100%;
+    height: 100%;
+  }
+
+ .hover__body {
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  opacity: 0;
+}
+
+ .hover__body--active {
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  opacity: 0.5;
+}
+
+.form {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #a5a5a5;
+  border: solid 1px #000;
+  left: 0%;
+  top: 0%;
+  z-index: 6;
+  transition: 1s;
+  transform: translateY(-100%);
+}
+
+.form--active {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  border: solid 1px #000;
+  left: 0%;
+  top: 0%;
+  z-index: 6;
+  transition: 1s;
+}
+
+  .container {
+    width: 80%;
+  }
+
+  .header {
+    font-size: 30px;
+    padding-top: 15px;
+    text-align: center;
+  }
+
+  .text {
+    width: 90%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .first__line {
+    flex-wrap: wrap;
+  }
+
+  .first__line,
+  .second__line,
+  .third__line {
+  display: block;
+  }
+
+  .input__data {
+    margin-top: 35px;
+    width: 100%;
+  }
+
+  .input__data__message {
+    width: 100%;
+  }
+
+    .btn__form {
+        display: block;
+        width: 100%;
+        margin-top: 25px;
+        margin-bottom: 35px;
+    }
+
+    .btn__popup {
+        top: 25%;
+        width: 60%;
+    }
+
+    .button--active {
+        top: 25%;
+        width: 60%;
+    }
+
+}
+
